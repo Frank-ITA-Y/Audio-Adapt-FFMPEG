@@ -1,0 +1,18 @@
+﻿# --- File di configurazione generati dagli script ---
+.nome_cartella.txt
+.config_update.txt
+
+# --- File di log generati in background ---
+*.log
+update.log
+ffmpeg_updater_log.txt
+
+# --- Escludi le cartelle di output dei file audio ---
+# Questo evita che i file convertiti finiscano online
+Pubblicabili/
+Convertiti/
+*pubblicazione*
+
+# --- File temporanei di sistema ---
+.DS_Store
+Thumbs.db
