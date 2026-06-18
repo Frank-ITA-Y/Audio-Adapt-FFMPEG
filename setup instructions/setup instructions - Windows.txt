@@ -1,0 +1,9 @@
+ 1. Open PowerShell as Administrator and run this command:
+
+	Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+Step 1: Directory Setup
+- Create a new folder on your Desktop named Audio.
+- Move install.ps1, Adatta_files.ps1, and update.ps1 from the Windows/ folder inside it.
+Step 2: Running the Installer
+1. Right-click install.ps1 and choose "Run with PowerShell" (or open PowerShell as Admin, navigate to the folder, and run .\install.ps1).
+2. The script will automatically check for Winget, configure FFmpeg, and offer to schedule automated background updates.

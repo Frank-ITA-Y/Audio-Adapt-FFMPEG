@@ -1,0 +1,11 @@
+Step 1: Directory Setup
+1. Create a new directory named Audio.
+2. Move installer.sh, Adatta_files.sh, and update.sh inside the Audio folder.
+Step 2: Running the Installer
+- Open your Terminal app (Press Cmd + Space, type Terminal, and hit Enter).
+- To bypass macOS security blocks without manually running chmod, execute the installer directly through bash:
+   bash ~/Desktop/Audio/installer.sh (write admin password if needed)
+Step 3: Configure Automatic Updates
+At the end of the installation, the wizard will ask if you want to enable automatic background maintenance:
+- Press y (Yes) to activate the hidden background cron/daemon.
+- Input the interval in days (e.g., 7 for weekly checks).

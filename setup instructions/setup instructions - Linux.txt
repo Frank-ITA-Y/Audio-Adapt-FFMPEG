@@ -1,0 +1,13 @@
+Step 1: Directory Setup
+- Create a new folder in your Home directory named Audio.
+- Move installer.sh, Adatta_files.sh, and update.sh from the Linux/ repository folder inside it.
+Step 2: Choosing the Deployment Method
+1. Open your terminal and run the installer using bash:
+	bash ~/Audio/installer.sh
+
+2. You will be prompted to choose between two installation tracks:
+
+-Flatpak [RECOMMENDED]: Installs FFmpeg via a sandboxed user runtime. This is highly recommended if you want hassle-free automated updates,      			as Flatpak can update itself in the background without constantly requesting your sudo password.
+-Native Package Manager: Detects your distribution architecture and runs native tools (apt for Ubuntu/Debian, pacman for Arch, dnf for Fedora).
+
+NB. Installer.sh does not install Flatpak automatically
