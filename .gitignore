@@ -2,6 +2,7 @@
 .nome_cartella.txt
 .config_update.txt
 
+
 # --- File di log generati in background ---
 *.log
 update.log
