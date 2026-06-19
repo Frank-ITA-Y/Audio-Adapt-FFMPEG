@@ -1,9 +1,9 @@
 ﻿# 🎵 Audio-Adapt-FFmpeg
 
 <p align="center">
-  <img src="https://shields.io" alt="Platforms" />
-  <img src="https://shields.io" alt="Dependencies" />
-  <img src="https://shields.io" alt="License" />
+  <img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux%20%7C%20Windows-0078d4?style=for-the-badge" alt="Platforms" />
+  <img src="https://img.shields.io/badge/Dependecies-FFmpeg%20%7C%20Homebrew%20%7C%20Flatpak%20%7C%20Winget-0052cc?style=for-the-badge" alt="Dependencies" />
+  <img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-4caf50?style=for-the-badge" alt="License" />
 </p>
 
 <p align="center">
@@ -103,6 +103,11 @@ You will be prompted to choose between two installation tracks:
 ### Step 2: Running the Installer
 1. Right-click `install.ps1` and choose **"Run with PowerShell"** (or open PowerShell as Admin, navigate to the folder, and run `.\install.ps1`).
 2. The script will automatically check for **Winget**, configure **FFmpeg**, and offer to schedule automated background updates.
+
+> [!CAUTION]
+> ### 🪟 Windows Terminal Drag & Drop Feature
+> If you are running the scripts inside the modern **Windows Terminal** app (instead of the classic `powershell.exe` window), the drag and drop feature might be blocked by default. 
+> To fix this, you must open the Windows Terminal Settings, navigate to **Advanced** or **Interaction** settings, and explicitly enable the **"Drag and drop path insertion"** toggle. Otherwise, paths will not expand when dropping files into the console.
 
 ---
 
