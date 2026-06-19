@@ -65,30 +65,40 @@ if ($LASTEXITCODE -eq 0 -or (Get-Command ffmpeg -ErrorAction SilentlyContinue)) 
     Exit
 }
 # update
+# Configurazione Aggiornamenti (Versione Fixata)
+$Host.UI.RawUI.FlushInputBuffer()
 Write-Host "`n=== CONFIGURAZIONE AGGIORNAMENTI ===" -ForegroundColor Cyan
 $scelta_up = Read-Host "Vuoi attivare il controllo automatico degli aggiornamenti? [s/N]"
 if ([string]::IsNullOrEmpty($scelta_up)) { $scelta_up = "N" }
+
 if ($scelta_up -match "^[Ss]$") {
     if (Test-Path "$ScriptDir\update.ps1") {
+        
+        # FISSO FONDAMENTALE: Svuota il buffer della tastiera per evitare il salto automatico
+        $Host.UI.RawUI.FlushInputBuffer()
+        
         while ($true) {
             $giorni_scelti = Read-Host "Ogni quanti giorni vuoi eseguire la scansione? (default: 7)"
             if ([string]::IsNullOrEmpty($giorni_scelti)) { $giorni_scelti = 7 }
             
-            # Verifica che sia un numero intero valido maggiore di 0
-            if ($giorni_scelti -match "^\d+$" -and $giorni_scelti -gt 0) {
+            # Verifica rigorosa in PowerShell per controllare che sia un numero maggiore di 0
+            if ($giorni_scelti -match "^\d+$" -and [int]$giorni_scelti -gt 0) {
                 break
             }
             Write-Host "[ERRORE] Inserisci un numero di giorni valido (maggiore di 0)." -ForegroundColor Red
         }
         Write-Host "Attivazione updater in corso..." -ForegroundColor Gray
         
-        # Lancia update.ps1 passandogli i parametri per configurarsi da solo
+        # Lancia update.ps1
         & "$ScriptDir\update.ps1" -SetupAuto -Giorni $giorni_scelti
     } else {
         Write-Host "[ERRORE] File 'update.ps1' non trovato nella cartella." -ForegroundColor Red
     }
 } else {
-    Write-Host "Aggiornamenti automatici disattivati. Potrai attivarli quando vuoi lanciando update.ps1" -ForegroundColor Yellow
+    Write-Host "Disattivazione o mantenimento updater spento..." -ForegroundColor Yellow
+    if (Test-Path "$ScriptDir\update.ps1") {
+        & "$ScriptDir\update.ps1" -Dis
+    }
 }
 
 Write-Host "`n=== SETUP COMPLETATO ===" -ForegroundColor Green
