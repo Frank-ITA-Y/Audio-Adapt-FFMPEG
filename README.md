@@ -93,7 +93,7 @@ You will be prompted to choose between two installation tracks:
 > ### 🛡️ PowerShell Execution Policy
 > Windows blocks custom scripts by default for security reasons. Before running the toolkit for the first time, you must unlock PowerShell. Open PowerShell **as Administrator** and run this command:
 > ```powershell
-> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+> Set-ExecutionPolicy Unrestricted -Scope Process 
 > ```
 
 ### Step 1: Directory Setup

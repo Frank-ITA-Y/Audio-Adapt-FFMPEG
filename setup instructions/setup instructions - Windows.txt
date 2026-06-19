@@ -1,6 +1,6 @@
  1. Open PowerShell as Administrator and run this command:
 
-	Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+	Set-ExecutionPolicy Unrestricted -Scope Process
 Step 1: Directory Setup
 - Create a new folder on your Desktop named Audio.
 - Move install.ps1, Adatta_files.ps1, and update.ps1 from the Windows/ folder inside it.
